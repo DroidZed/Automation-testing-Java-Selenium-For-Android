@@ -3,29 +3,31 @@ package testRunner;
 import base.Setup;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import screens.ArticleScreen;
 import screens.HomeScreen;
-import screens.LoginScreen;
 
 public class TestEnterArticleDetails extends Setup {
-    private final HomeScreen homeScreen = new HomeScreen(driver);
-    private final LoginScreen loginScreen = new LoginScreen(driver);
+    private HomeScreen homeScreen;
+
+    private ArticleScreen articleScreen;
 
     @Test(priority = 1)
-    public void LogOut() throws InterruptedException {
-       // String result = homeScreen.logout();
-      //  Assert.assertEquals(result, "Sign In");
+    public void EnterArticle() {
+        homeScreen = new HomeScreen(driver);
+        articleScreen = new ArticleScreen(driver);
+        String result = homeScreen.tapOnListItems();
+        Assert.assertEquals(result, "Read more");
+        String articleSite = articleScreen.readArticle();
+        Assert.assertEquals(articleSite, "kotaku.com");
     }
 
     @Test(priority = 2)
-    public void Login() throws InterruptedException {
-        String result = loginScreen.login();
-        Assert.assertEquals(result, "Articles");
-    }
-
-    @Test(priority = 3)
-    public void EnterArticle() throws InterruptedException {
-        String result = homeScreen.tapOnListItems();
+    public void LeaveArticle() throws InterruptedException {
+        articleScreen = new ArticleScreen(driver);
+        String result = articleScreen.exitArticlePage();
         Assert.assertEquals(result, "Read more");
+        String r2 = articleScreen.upNavigateFromArticleDetails();
+        Assert.assertEquals(r2, "Articles");
     }
 
 }

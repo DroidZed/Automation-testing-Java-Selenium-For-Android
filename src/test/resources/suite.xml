@@ -3,20 +3,28 @@
     <test name="Login Nebula automation">
         <classes>
             <class name="testRunner.LoginTestRunner"/>
-            <class name="screens.LoginScreen"/>
         </classes>
     </test>
     <test name="Enter Articles Details Nebula automation">
         <classes>
             <class name="testRunner.TestEnterArticleDetails"/>
-            <class name="screens.LoginScreen"/>
-            <class name="screens.HomeScreen"/>
         </classes>
     </test>
     <test name="Logout Nebula Gaming">
         <classes>
             <class name="testRunner.LogOutTestRunner"/>
-            <class name="screens.HomeScreen"/>
+        </classes>
+    </test>
+    <test name="First Scenario Test" >
+        <classes>
+            <class name="testRunner.FirstScenarioTest">
+                <methods>
+                    <include name="testLogin"/>
+                    <include name="testEnterArticle"/>
+                    <include name="testLeaveArticle"/>
+                    <include name="testLogOut"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

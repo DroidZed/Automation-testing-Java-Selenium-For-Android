@@ -12,7 +12,7 @@ public class LogOutTestRunner extends Setup {
     @Test(priority = 1)
     public void LogOut() throws InterruptedException {
         homeScreen = new HomeScreen(driver);
-       // String result = homeScreen.logout();
-      //  Assert.assertEquals(result, "Sign In");
+        String result = homeScreen.logout();
+        Assert.assertEquals(result, "Sign In");
     }
 }

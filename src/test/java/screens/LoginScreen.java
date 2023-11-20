@@ -21,14 +21,10 @@ public class LoginScreen {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    public String login() throws InterruptedException {
-        Thread.sleep(1000);
+    public String login() {
         emailTf.sendKeys("aymen.dragon5@gmail.com");
-        Thread.sleep(1000);
         passwordTf.sendKeys("aymen77");
-        Thread.sleep(1000);
         buttonLogin.click();
-        Thread.sleep(1000);
         return txt_toolbar.getText();
     }
 }
