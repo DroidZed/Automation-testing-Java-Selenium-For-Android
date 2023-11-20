@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="1" name="Login Nebula Automation">
+    <test name="Login Nebula automation">
+        <classes>
+            <class name="testRunner.LoginTestRunner"/>
+            <class name="screens.LoginScreen"/>
+        </classes>
+    </test>
+    <test name="Enter Articles Details Nebula automation">
+        <classes>
+            <class name="testRunner.TestEnterArticleDetails"/>
+            <class name="screens.LoginScreen"/>
+            <class name="screens.HomeScreen"/>
+        </classes>
+    </test>
+    <test name="Logout Nebula Gaming">
+        <classes>
+            <class name="testRunner.LogOutTestRunner"/>
+            <class name="screens.HomeScreen"/>
+        </classes>
+    </test>
+</suite>
